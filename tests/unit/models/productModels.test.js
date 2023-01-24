@@ -1,16 +1,26 @@
 const { expect } = require('chai');
 const sinon = require('sinon');
-const productModels = require('../../../src/models/products.models');
+const productModels = require('../../../src/models');
 const connection = require('../../../src/models/connection');
-const productsMock = require('./mocks/products.mock');
+const productsMock = require('../../mocks/products.mock');
 
 
 describe('Testa os produtos da camada Models', () => {
-  it('Testa se todos os produtos são mostrados na rota "/products"', async () => {
+  afterEach(sinon.restore);
+
+  it('1- Testa se todos os produtos são mostrados na rota "/products"', async () => {
     sinon.stub(connection, 'execute').resolves([productsMock]);
 
     const result = await productModels.getAllProducts();
 
     expect(result).to.be.deep.equal(productsMock);
+  });
+
+  it('2- Testa se um produto é mostrado quando pesquisado seu Id', async () => {
+    sinon.stub(connection, 'execute').resolves([[productsMock[0]]]);
+
+    const result = await productModels.getProductById(1);
+    
+    expect(result).to.be.deep.equal(productsMock[0]);
   });
 })
