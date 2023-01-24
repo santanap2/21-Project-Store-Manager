@@ -12,13 +12,6 @@ app.get('/', (_request, response) => {
   response.send();
 });
 
-// app.post('/products', async (req, res) => {
-//   const name = req.body;
-//   const test = await productsModel.insertProduct(name);
-//   console.log(test);
-//   return res.status(201).json(test);
-// });
-
 app.use(router.productRouters);
 
 // não remova essa exportação, é para o avaliador funcionar
