@@ -3,18 +3,24 @@ const express = require('express');
 
 const app = express();
 
-const productModels = require('./models');
+// const productModels = require('./models');
+
+const productRouter = require('./routers/productRouters');
 
 // não remova esse endpoint, é para o avaliador funcionar
 app.get('/', (_request, response) => {
-  response.send('FUNCIONANDO');
-}); 
- 
-app.get('/products', productModels.getAllProducts); 
+  response.send();
+});
 
-app.get('/products/:id', (req, res) => productModels.getProductById(req, res));
+app.use(productRouter);
 
-// app.get('/products/:id', productModels.getProductById);
+// app.get('/products', productModels.getAllProducts); 
+
+// app.get('/products/:id', async (req, res) => {
+//   const { id } = req.params;
+//   const result = await productModels.getProductById(id);
+//   return res.status(200).json(result);
+// });
 
 // não remova essa exportação, é para o avaliador funcionar
 // você pode registrar suas rotas normalmente, como o exemplo acima
