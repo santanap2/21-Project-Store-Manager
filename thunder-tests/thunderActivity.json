@@ -4,13 +4,51 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:3000/products",
-    "url": "http://localhost:3000/products/2",
+    "url": "http://localhost:3000/products",
     "method": "GET",
     "sortNum": 0,
     "created": "2023-01-23T22:59:51.978Z",
-    "modified": "2023-01-24T04:28:39.138Z",
+    "modified": "2023-01-24T21:06:05.340Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "9920eb43-1506-4329-aa59-0678b6de80c6",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/",
+    "url": "http://localhost:3000/products/",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-01-24T20:10:31.705Z",
+    "modified": "2023-01-24T20:10:31.705Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{ name: Playstation 5 }",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "3589c46d-9a2f-40b2-b649-6891514d4a73",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products",
+    "url": "http://localhost:3000/products",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-01-24T20:11:19.917Z",
+    "modified": "2023-01-24T21:05:49.575Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"ProdutoX\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]
