@@ -1,11 +1,11 @@
 const express = require('express');
-const productsController = require('../controllers');
+const { productController } = require('../controllers');
 const { validateName } = require('../services/validations/validationsInput');
 
 const router = express.Router();
 
-router.get('/products', productsController.getAllProducts);
-router.get('/products/:id', productsController.getProductById);
-router.post('/products', validateName, productsController.insertProduct);
+router.get('/products', productController.getAllProducts);
+router.get('/products/:id', productController.getProductById);
+router.post('/products', validateName, productController.insertProduct);
 
 module.exports = router;
