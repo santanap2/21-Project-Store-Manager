@@ -1,8 +1,8 @@
-const { createSale } = require('../services');
+const { salesService } = require('../services');
 
 const createSales = async (req, res) => {
   const sale = req.body;
-  const response = await createSale(sale);
+  const response = await salesService.createSale(sale);
   
   if (response.message === '"productId" is required') return res.status(400).json(response);
 

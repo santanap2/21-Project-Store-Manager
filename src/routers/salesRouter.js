@@ -1,8 +1,9 @@
 const express = require('express');
-const { createSales } = require('../controllers');
+const { salesController } = require('../controllers');
 
 const salesRouter = express.Router();
 
-salesRouter.post('/sales', createSales);
+salesRouter.post('/sales', salesController.createSales);
+salesRouter.get('/sales', (_req, res) => res.status(200).json('/sales funcionando'));
 
 module.exports = salesRouter;
