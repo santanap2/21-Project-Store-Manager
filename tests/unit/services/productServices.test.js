@@ -1,14 +1,14 @@
 const { expect } = require('chai');
 const sinon = require('sinon');
-const productModel = require('../../../src/models');
-const productService = require('../../../src/services');
+const { productsModel } = require('../../../src/models');
+const { productService } = require('../../../src/services');
 const productsMock = require('../../mocks/products.mock');
 
 describe('Testa os produtos da camada Service', () => {
   afterEach(sinon.restore);
 
   it('1- Testa se todos os produtos são mostrados na rota "/products"', async () => {
-    sinon.stub(productModel, 'getAllProducts').resolves(productsMock);
+    sinon.stub(productsModel, 'getAllProducts').resolves(productsMock);
 
     const result = await productService.getAllProducts();
 
@@ -16,7 +16,7 @@ describe('Testa os produtos da camada Service', () => {
   });
 
   it('2- Testa se um produto é mostrado quando pesquisado seu Id', async () => {
-    sinon.stub(productModel, 'getProductById').resolves(productsMock[0]);
+    sinon.stub(productsModel, 'getProductById').resolves(productsMock[0]);
 
     const { message } = await productService.getProductById(1);
 
@@ -24,7 +24,7 @@ describe('Testa os produtos da camada Service', () => {
   });
 
   it('3- Testa se a mensagem "Product not found" é exibida quando o produto não existe', async () => {
-    sinon.stub(productModel, 'getProductById').resolves(undefined);
+    sinon.stub(productsModel, 'getProductById').resolves(undefined);
 
     const result = await productService.getProductById(999);
 

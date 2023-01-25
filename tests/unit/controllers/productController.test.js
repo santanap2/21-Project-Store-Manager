@@ -3,8 +3,8 @@ const chai = require('chai');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 
-const productService = require('../../../src/services');
-const productController = require('../../../src/controllers');
+const { productService } = require('../../../src/services');
+const { productController } = require('../../../src/controllers');
 const productsMock = require('../../mocks/products.mock');
 
 chai.use(sinonChai);
