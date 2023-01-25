@@ -4,6 +4,7 @@ const { salesController } = require('../controllers');
 const salesRouter = express.Router();
 
 salesRouter.post('/sales', salesController.createSales);
-salesRouter.get('/sales', (_req, res) => res.status(200).json('/sales funcionando'));
+salesRouter.get('/sales', salesController.getSales);
+salesRouter.get('/sales/:id', salesController.getSaleById);
 
 module.exports = salesRouter;
