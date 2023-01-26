@@ -14,44 +14,6 @@
     "tests": []
   },
   {
-    "_id": "9920eb43-1506-4329-aa59-0678b6de80c6",
-    "colId": "history",
-    "containerId": "",
-    "name": "http://localhost:3000/products/",
-    "url": "http://localhost:3000/products/",
-    "method": "POST",
-    "sortNum": 0,
-    "created": "2023-01-24T20:10:31.705Z",
-    "modified": "2023-01-24T20:10:31.705Z",
-    "headers": [],
-    "params": [],
-    "body": {
-      "type": "json",
-      "raw": "{ name: Playstation 5 }",
-      "form": []
-    },
-    "tests": []
-  },
-  {
-    "_id": "3589c46d-9a2f-40b2-b649-6891514d4a73",
-    "colId": "history",
-    "containerId": "",
-    "name": "http://localhost:3000/products",
-    "url": "http://localhost:3000/products",
-    "method": "POST",
-    "sortNum": 0,
-    "created": "2023-01-24T20:11:19.917Z",
-    "modified": "2023-01-24T21:05:49.575Z",
-    "headers": [],
-    "params": [],
-    "body": {
-      "type": "json",
-      "raw": "{\n  \"name\": \"ProdutoX\"\n}",
-      "form": []
-    },
-    "tests": []
-  },
-  {
     "_id": "f982f125-b339-4768-bb8a-d4e83895ae5f",
     "colId": "history",
     "containerId": "",
@@ -66,6 +28,25 @@
     "body": {
       "type": "json",
       "raw": "[\n  {\n    \"productId\": 1\n  },\n  {\n    \"productId\": 3,\n    \"quantity\": 5\n  }\n]",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "9fc94cf0-3f8f-43ef-a927-e0baf3a988cc",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/1",
+    "url": "http://localhost:3000/products/2",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-01-25T23:59:44.428Z",
+    "modified": "2023-01-26T00:45:58.021Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Armadura do Homem de Ferro\"\n}",
       "form": []
     },
     "tests": []

@@ -24,8 +24,20 @@ const insertProduct = async (name) => {
   return { type: null, message: newProduct };
 };
 
+const updateProduct = async ({ name, id }) => {
+  // if (name.length < 5) {
+  //   return { type: 'SMALL NAME', message: '"name" length must be at least 5 characters long' };
+  // }
+  await productsModel.updateProduct({ name, id });
+  const updatedProduct = await productsModel.getProductById(id);
+  if (!updatedProduct) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
+
+  return { type: null, message: updatedProduct };
+};
+
 module.exports = {
   getAllProducts,
   getProductById,
   insertProduct,
+  updateProduct,
 };
