@@ -25,9 +25,6 @@ const insertProduct = async (name) => {
 };
 
 const updateProduct = async ({ name, id }) => {
-  // if (name.length < 5) {
-  //   return { type: 'SMALL NAME', message: '"name" length must be at least 5 characters long' };
-  // }
   await productsModel.updateProduct({ name, id });
   const updatedProduct = await productsModel.getProductById(id);
   if (!updatedProduct) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
@@ -35,9 +32,17 @@ const updateProduct = async ({ name, id }) => {
   return { type: null, message: updatedProduct };
 };
 
+const deleteProduct = async (id) => {
+  const productToDelete = await productsModel.getProductById(id);
+  if (!productToDelete) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
+  await productsModel.deleteProduct(id);
+  return {};
+};
+
 module.exports = {
   getAllProducts,
   getProductById,
   insertProduct,
   updateProduct,
+  deleteProduct,
 };

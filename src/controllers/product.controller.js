@@ -28,8 +28,16 @@ const updateProduct = async (req, res) => {
   const { id } = req.params;
   const { name } = req.body;
   const result = await productService.updateProduct({ name, id });
+  console.log(result);
   if (result.type) return res.status(404).json({ message: result.message });
   return res.status(200).json(result.message);
+};
+
+const deleteProduct = async (req, res) => {
+  const { id } = req.params;
+  const result = await productService.deleteProduct(id);
+  if (result.type) return res.status(404).json({ message: result.message });
+  return res.status(204).send();
 };
 
 module.exports = {
@@ -37,4 +45,5 @@ module.exports = {
   getProductById,
   insertProduct,
   updateProduct,
+  deleteProduct,
 };
